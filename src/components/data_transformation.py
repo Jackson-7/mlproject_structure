@@ -78,7 +78,7 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
             
             target_column_name='math_score'
-            numerical_columns=['writing_score','reading_score']
+            numerical_columns=['writing_score','reading_score']  # noqa: F841
             
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
@@ -100,7 +100,7 @@ class DataTransformation:
                 input_feature_test_arr, np.array(target_feature_test_df)
                 ]
 
-            logging.info(f"Saved preprocessing object.")
+            logging.info(f"Saved preprocessing object.")  # noqa: F541
             
             save_object(
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
